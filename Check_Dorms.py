@@ -23,7 +23,7 @@ CHECK_TEXT = "No results found for the given search criteria."
 def check_page():
     response = requests.get(URL)
     soup = BeautifulSoup(response.text, 'html.parser')
-    if CHECK_TEXT not in soup.text:
+    if CHECK_TEXT in soup.text:
         print("found it")
         send_notification()
 
